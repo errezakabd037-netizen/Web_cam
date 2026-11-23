@@ -23,6 +23,7 @@ function send(type, data = null) {
 function createPeer() {
   if (pc) pc.close();
   pc = new RTCPeerConnection(rtcConfig);
+  pc.addTransceiver("video", { direction: "recvonly" });
   pc.ontrack = (event) => {
     video.srcObject = event.streams[0];
     quality.textContent = "Live video connected";

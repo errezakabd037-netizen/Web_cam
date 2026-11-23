@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PhoneCam — Connect camera</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar"><div class="brand"><span class="brand-icon">◉</span> PhoneCam</div><span class="tag">BETA · PHASE 1</span></header>
+    <section class="hero">
+      <p class="eyebrow">WIRELESS CAMERA CONNECTION</p>
+      <h1>Your phone.<br><span>As your webcam.</span></h1>
+      <p class="muted intro">Connect your phone camera to this computer by scanning a secure, temporary QR code.</p>
+    </section>
+    <section class="panel">
+      <div class="panel-head"><div><h2>Connect a phone</h2><p class="muted">Keep this page open while pairing.</p></div><span id="status" class="status">Not connected</span></div>
+      <div class="connect-area">
+        <div class="qr-wrap"><div id="qr-placeholder" class="qr-placeholder">QR code<br>will appear here</div><img id="qr" alt="Temporary PhoneCam connection QR code" hidden></div>
+        <div class="instructions">
+          <div class="step"><b>01</b><span>Generate a temporary QR code.</span></div>
+          <div class="step"><b>02</b><span>Scan it using your phone.</span></div>
+          <div class="step"><b>03</b><span>Approve camera access on the phone.</span></div>
+          <button id="create" class="primary">Generate QR code</button>
+          <button id="close" class="secondary" disabled>End session</button>
+          <p id="message" class="hint" aria-live="polite">Your camera will not start until you approve it on your phone.</p>
+        </div>
+      </div>
+    </section>
+    <section class="preview-panel">
+      <div class="panel-head"><div><h2>Live preview</h2><p class="muted">The phone video will appear here.</p></div><span id="quality" class="muted small">Waiting for stream</span></div>
+      <video id="remoteVideo" autoplay playsinline></video>
+    </section>
+    <footer>PhoneCam · Private by permission · No recording in Phase 1</footer>
+  </main>
+  <script src="/desktop.js"></script>
+</body>
+</html>
